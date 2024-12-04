@@ -13,7 +13,7 @@ public static class TodoItemsEndpoints
     public const string CompleteUrl = $"{Url}/{{id}}/complete";
     public const string PendingUrl = $"{Url}/pending";
 
-    public static IEndpointRouteBuilder MapItemsEndpoints(this IEndpointRouteBuilder app)
+    public static IEndpointRouteBuilder MapTodoItemsEndpoints(this IEndpointRouteBuilder app)
     {
         app.MapPost(Url, async Task<Results<Ok<Result>, NotFound>> ([FromBody] CreateTodoItemDto model, ITodoItemService service) =>
         {
